@@ -44,4 +44,4 @@
 - The ```<script>``` tag does not necesarily go in the head, actually it is recommended to be inserted at the bottom of a document body, just before the closing ```</body>``` tag, to make sure that all html has been loaded before the javascript script is executed. It looks like so ```<script src="main.js"></script>``` Make sure to always close your script tag, it may look empty but it is loading the javascript code in that space. Because of that you could also put your javascript code simpy inside ```<script>yourjscode</script>```.
 ***
 **Setting the language of your document**
-- Finally it is important to tell your web browser which language is the content displayed in. 
+- Finally it is important to tell your web browser which language the is content displayed in. 
