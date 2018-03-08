@@ -105,4 +105,4 @@
 - If you insert this into an html document you would see that when we hover over the words Bus times the content of our title attribute will pop up in a little box next to our cursor. 
 - This can be useful if we want to give our users a little preview of what is the website which we redirect them to if they click that link.
 #### What about when we want to link another page on our website?
-- t
+- 
