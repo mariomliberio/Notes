@@ -105,4 +105,52 @@
 - If you insert this into an html document you would see that when we hover over the words Bus times the content of our title attribute will pop up in a little box next to our cursor. 
 - This can be useful if we want to give our users a little preview of what is the website which we redirect them to if they click that link.
 #### What about when we want to link another page on our website?
-- 
+- It is important to underline that ```<a>``` tags are also used when we are linking our website with other pages in our domain. Therefore folder path and structure are crucial to this. For example if we were linking to another page on the same domain and on the same folder we would just do like so: ``` <a href="contactpage.html">Contact</a>```.
+- However it is also possible we put the linked page inside a folder, for organization purposes. Lets say we have a media folder with html pages for pictures and video. If we want to link to any of these two pages we have to first specify the folder they are contained in and then the actual page name like so: ```<a href="media/pictures.html">Pictures</a>``` 
+- Now imagine we are in our videos html page but we want to go to our contact form which is located inside a contact folder outside of our media folder.. We would have to specify the parent directory, however there is an extra detail we need to add to make our link go back to the main page and then into our contact folder and our contact html page. To go back to our parent directory we use ```..```. An example would look like so:
+``` <a href="../contact/contact.html">Contact Form</a>```.
+#### And what if we want to link another part of the same page?
+- We can do this by giving an ```id``` to a specific part of the page. For example say we are making a one page website for an artist and we have different sections in one page, one for his portfolio, one for his contact form etc etc. We would give the ```<div>``` containing these areas a unique id eg. ```<div id="portfolio"></div><div id="contactarea"></div>```. To link these pages from the navigation bar we would create an ```<a>``` tag like so: ```<a href="#portfolio">Portfolio</a>```.
+- We can also link a specific part of another page using the same tools as we previously showed and the id marker. ```<a href="contact.html#contactform">Contact us</a>```.
+#### How about downloading files?
+- When linking to files such as PDF, MP3, or DOC we should specify this inside our ```<a>``` tag to avoid people on low bandwith downloading something that would be uneccesary and too time consuming. Therefore if we were linking to an MP3 it would be best practice to do it like so: ```<a href="http://www.example.com/song.mp3"> Download the song (MP3, 10MB)</a>```.
+- We can also provide a default filename when linking to a download using the ```download=""``` attribute inside our ```<a>``` tags. Eg.: ```<a href="http://www.example.com/song.mp3" download="sicksongbro.mp3">Download the song (MP3, 10MB)</a>```.
+#### And email links?
+- It is also possible to create links that will open a new email to a specific address instead of linking to a page, pagesection or file. For example: ```<a href="mailto:cunt@gmail.com"> Send an email to Cunt </a>```
+- The email address itself is optional, if our href contains the ```mailto:``` text it will generate a new blank email to send without a destination address.
+- However we can also specify more in our ```mailto:``` sections for example a series of CC's, a Subject and an email Body. We can do this like so: ```<a href="mailto:cunt@gmail.com?cc=prick@gmail.com&cc=asshole@gmail.com&subject=You%20are%20a%20bunch%20of%20little%20shits&body=Hello%20Assholes"> ```
+- This previous example would send a mail to cunt, prick and asshole with the subject You are a bunch of little shits and the body of Hello Assholes. 
+***
+**Advanced Text Formatting**
+- We are going to review some less known HTML elements which are not necessary to create a basic website, however they can be handy to execute specific roles for text without the need to style them through CSS.
+#### Description Lists
+- Used for terms and definitions or questions and awnsers. Use different tags compared to ordered and unordered lists but are based on the same principles.
+- Description lists are contained inside ```<dl>``` tags, once again same principle as ```<ol>``` and ```<ul>``` tags. Inside these tags we have two types of elements: Description terms ```<dt>``` and description definitions ```<dd>```. Here is an example straight outta the MDN:
+```
+<dl>
+  <dt>soliloquy</dt>
+  <dd>In drama, where a character speaks to themselves, representing their inner thoughts or feelings and in the process relaying them to the audience (but not to other characters.)</dd>
+  <dt>monologue</dt>
+  <dd>In drama, where a character speaks their thoughts out loud to share them with the audience and any other characters present.</dd>
+  <dt>aside</dt>
+  <dd>In drama, where a character shares a comment only with the audience for humorous or dramatic effect. This is usually a feeling, thought, or piece of additional background information.</dd>
+</dl>
+```
+- As you can see this is pretty simple, if you test it in an HTML document you will see it creates a nice formatting style which helps readability when dealing with questions and awnsers (useful for FAQ's) and terms and definitions (useful for technical websites). It is important to underline that a description term can contain several description definitions.
+ 
+#### Quotations
+
+- There are several types of quotations we can use in HTML such as ```<blockquotes>```, ```<code>``` and others. Let's go through them.
+
+**Blockquotes**
+
+- If you are quoting text from an external source it is nice to use ```<blockquote>``` tags to mark this in HTML formatting directly. For example:
+```
+<blockquote>
+  <p>To be fair, you have to have a very high IQ to understand Rick and Morty. The humour is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer’s head. There’s also Rick’s nihilistic outlook, which is deftly woven into his characterisation- his personal philosophy draws heavily from Narodnaya Volya literature, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of these jokes, to realise that they’re not just funny- they say something deep about LIFE. As a consequence people who dislike Rick & Morty truly ARE idiots- of course they wouldn’t appreciate, for instance, the humour in Rick’s existential catchphrase “Wubba Lubba Dub Dub,” which itself is a cryptic reference to Turgenev’s Russian epic Fathers and Sons. I’m smirking right now just imagining one of those addlepated simpletons scratching their heads in confusion as Dan Harmon’s genius wit unfolds itself on their television screens. What fools.. how I pity them. 😂
+
+  And yes, by the way, i DO have a Rick & Morty tattoo. And no, you cannot see it. It’s for the ladies’ eyes only- and even then they have to demonstrate that they’re within 5 IQ points of my own (preferably lower) beforehand. Nothin personnel kid 😎</p>
+</blockquote> 
+```
+- As seen above the OG Rick & Morty copypasta is formatted to see that we are not the author of this infamy.
+
