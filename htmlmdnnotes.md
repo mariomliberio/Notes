@@ -2,6 +2,9 @@
 ***
 **Notes from the start**
 ###### cos why not. 
+
+- Best way to familiarize yourself with HTML (& programming languages, not only markup) is to look at existing code. So go on a website that hasnt been created with a cms (content management system like wordpress or wix) and view their source. Reading code is the best way to learn!
+
 ***
 **Metadata**
 
@@ -154,3 +157,111 @@
 ```
 - As seen above the OG Rick & Morty copypasta is formatted to see that we are not the author of this infamy.
 
+**Inline Quotations**
+
+- We can also create a quotation inline inside our paragraph. To do this we use the ```<q>``` tags. This will simply add quotation marks to the text inside the ```<q>``` tags. 
+
+**Abbreviations**
+
+- ```<abbr>``` tags are used to contain the full names of abbreviations inside your HTML text. Using the abbreviation tag with a title attribute inside it allows us to see the whole text it represents when we hover over it. Here is an example: ``` <abbr title="Hyper Markup Text Language">HTML</abbr>```
+
+**Contact Details**
+
+- HTML has an inbuilt tag for marking up the contact address of the author. This is the ```<address>``` tag. Here is an example:
+```
+<address>
+  <p>Mario Liberio, Cock street, Brussels</p>
+</address>
+```
+- Remember this element is supposed to be used for the author of the document, not any address.
+- Inserting an ```<a>``` tag inside our ```<address>``` tags redirecting to a contact page is also OK.
+
+**Superscript and Subscript**
+
+- Ocasionally you will need to use superscript or subscript in your HTML documents, especially if you are dealing with Mathematics or Science. For that purpose we use the ```<sup>``` & ```<sub>``` tags. For Example:
+```
+<p>My Birthday is on the 1<sup>st</sup> of December.</p>
+<p>Water's chemical formula is H<sub>2</sub>O</p>
+```
+
+**Representing computer code**
+
+- There are numerous ways of representing computer code in HTML:
+  1. ```<code>```: For representing generic snippets of code.
+  2. ```<pre>```: For retaining whitespace in code blocks, can be very useful when working with JSON data for  example. We will use this again in the future in our JS notes.
+  3. ```<var>```: For specifically displaying variables.
+  4. ```<kbd>```: For marking up (keyboard) input into the computer.
+  5. ```<samp>```: For displaying output of a computer program.
+
+
+**Time & Dates**
+
+- ```<time>``` Used for specifically marking up time and dates. With the use of the ```datetime=""``` attribute we can become more specific on the time that will be output. Here are some examples from the MDN:
+```
+<!-- Standard simple date -->
+<time datetime="2016-01-20">20 January 2016</time>
+<!-- Just year and month -->
+<time datetime="2016-01">January 2016</time>
+<!-- Just month and day -->
+<time datetime="01-20">20 January</time>
+<!-- Just time, hours and minutes -->
+<time datetime="19:30">19:30</time>
+<!-- You can do seconds and milliseconds too! -->
+<time datetime="19:30:01.856">19:30:01.856</time>
+<!-- Date and time -->
+<time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
+<!-- Date and time with timezone offset -->
+<time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time>
+<!-- Calling out a specific week number -->
+<time datetime="2016-W04">The fourth week of 2016</time>
+```
+***
+
+**Document & Website structure**
+
+- Although Websites can have many different layouts and display information in different ways, they all generally follow certain structural components:  
+  1. Header: Usually a stripe at the top of the webpage, Logo goes here.
+  2. Navbar: Links to the site's main section, often merged with header. Can be present at the top of the website or on the right in most cases.
+  3. Main content/Body: Central area which contains most of the website's content. Part of the website which will vary from page to page. 
+  4. Sidebar: Peripheral info such as links, quotes, advertisement can be used instead of a navbar in some websites. Contians recurring elements across pages.
+  5. Footer: Bottom of the website can containe fine print and legal information, a sitemap, notices or contact info. Place to put non-critical/secondary recurring information. Sometimes used for SEO to link useful information. 
+
+**Structuring content with HTML**
+
+- To implement the semantics discussed before we have our own HTML tags for each section. These can be used to contain the rest of elements that make up a website. 
+  1. Header: ```<Header>```
+  2. Navigation Bar: ```<navbar>```
+  3. Main Content: Most commonly used is ```<div>``` (divider). Many web developers use ```<div>``` tags combined with classes and id's to divide all of the content in their website, including the other sections ennumerated here. ```<article>``` & ```<section>``` can also be used. 
+  4. Sidebar: ```<aside>``` (rarely used irl)
+  5. Footer: ```<footer>```
+
+- Important! : All of these tags go inside the ```<body>``` tags of an html document. 
+
+**Less common structure tags in detail**
+
+- Although it is never necessary to use most of these tags (as mentioned before most webdev's use ```<div>```); here are some of the previous tags explained in more detail. 
+
+- ```<main>```: Used for content unique to the page. Use it only once per page.
+- ```<article>```: Encloses a block of content that makes sense on its own.
+- ```<section>```: Similar to article, used more to group a single part of the page which contains one piece of functionality. 
+- ```<aside>```: Contains content that is generally not related to the main content but can link us to it or indirectly reference it. 
+- ```<header>```: Represents a group of introductory content. Can define a global header or the header of a section. 
+- ```<nav>```: Contains the main navigation information of a webpage. 
+- ```<footer>```: represents the ending content of a webpage.
+
+**Non-Semantic wrappers**
+
+- Usually favored by web-developers (except maybe in the case of ```<nav>``` & ```<footer>``` tags) Non-semantic wrappers are used throught all sections of a webpage to divide content and apply specific style rules through the use of class attributes and CSS. The main two non-semantic wrappers are ```<div>``` & ```<span>```.
+
+- ```<div>```: Div (for divider) is the most common wrapper in 2018 websites. It is used (and often abused) when another tag is not available for that content. Usually through the use of a class it will be specified to what this ```<div>``` wrapper refers too. While a lot of web developers use ```<div>``` for everything and anything it is usually recommended to use only if another specific HTML tag does not exist for what you want to do. 
+
+- ```<span>```: Is an inline non-semantic wrapper. It is used mostly in combination with a ```class=""``` attribute to change the styling of a specific piece of content inside another one. For example:
+```
+<p>The King walked drunkenly back to his room at 01:00, the beer doing nothing to aid
+him as he staggered through the door <span class="editor-note">[Editor's note: At this point in the
+play, the lights should be down low]</span>.</p>
+```
+
+**Line breaks & Horizontal Wrappers**
+
+- Used occasionally, these two elements will help you structure text and content in a clean and quick way. 
