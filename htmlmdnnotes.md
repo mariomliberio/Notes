@@ -1,4 +1,4 @@
-# Working with HTML
+# Working with HTML &#129303;
 ***
 **Notes from the start**
 ###### cos why not. 
@@ -265,3 +265,88 @@ play, the lights should be down low]</span>.</p>
 **Line breaks & Horizontal Wrappers**
 
 - Used occasionally, these two elements will help you structure text and content in a clean and quick way. 
+
+- ```<br>```: Creates a line break in a paragraph. Only way to force a rigid structure where you want short lines. Used extensively if you would like to markup poetry. Also used extensively when echo'ing in php.
+- ```<hr>```: Horizontal rule. Displays a horizontal line therefore creating a separation between different pieces of text. 
+
+***
+**Debugging HTML (LOL)**
+
+- Tbh this title made me cringe and I thought about skipping this part, but the mdn includes it in its basic tutorial so might aswell include it.
+
+- HTML is permissive! It is interpreted not compiled (compared to actual programming languages).
+
+- Two main types of errors:
+  1. Syntax errors: Spelling errors in your code. Usually easy to fix if you know a language.
+  2. Logic errors: When spelling is correct but a program does not run, these are logic errors. Harder to fix than spelling errors especially when a programming language doesn't or barely gives you information on what the error is. 
+
+- In html you wont get syntax errors therefore if you make one, content may not be displayed as intented but it wont make your page crash and not be displayed at all. 
+
+- Most common error in HTML is forgetting a closing tag. Another common error is forgetting double quotes when giving an attribute. 
+
+- Best way to check if your HTML code is error less is to use a validator! The w3c offers this [https://validator.w3.org/](Markup Validator) to check no errors are present in html.
+***
+
+### Multimedia and Embedding
+
+***
+
+**Images in HTML**
+
+- In order to put images in an HTML page we use the ```<img>`` tag. This tag doesn't have a closing tag unlike all of the ones we've seen before. It doesn't contain any text either.
+
+- It requires at least one attribute: ```src=""``` meaning source. This is similar to ```href=""``` when creating hyperlinks. 
+
+- If our image is in the same directory as our html page the only thing we need to do is give the filename in the ```src=""``` like so: ```<img src="panda.jpg">``` This will display our image of a panda. 
+
+- If we have a separate images directory for organization we simply have to adapt our source like so: ```<img src="images/panda.jpg">.
+
+- If our image is in a parent directory like so: ```<img src="../panda.jpg">```.
+
+- And if our image is in a separate directory which is located in the parent directory like so: ```<img src="../images/panda.jpg">```.
+
+- We can also use a link to another website as our source like so: ```<img src="http://www.images.com/panda.jpg">``` However you should try to avoid this and keep your images in your directories. 
+
+**Alternative text attribute**
+
+- Similar to attributes when creating hyperlinks, the ```alt=""``` attribute  will  replace the image in the case that the image is not loading onto our website hence the name alternative text. For example:
+``` 
+<img src="panda.jpg" alt="A panda.">
+```
+
+**Width & Height**
+
+- You can directly insert ```width=""``` & ```height=""``` attributes onto an image tag. However if we want to keep in mind mobile responsiveness and adaptability, it is better to do this through CSS. If you still want to use width & height attributes in HTML it is important to know the units used are pixels. However, I strongly recommend you to ignore this and use responsive images in CSS through media queries.
+
+**Image Titles**
+
+- Same as our ```title=""``` attribute with hyperlink's, in ```<img>``` elements it will create a hover box with information about our image. We could use the same information as with our ```alt=""``` attributes for coherence. 
+
+***
+
+**Annotating images with figures and figure captions**
+
+- A good solution to create figures and figure captions in HTML was introduced in HTML5 with the ```<figure>``` & ```<figcaption>``` tags. This could previously be done with ```<div>``` tags however it is prefered to use semantically related tags like ```<figure>```. Here is an example:
+```
+<figure>
+  <img src="images/dinosaur.jpg"
+       alt="The head and torso of a dinosaur skeleton;
+            it has a large head with long sharp teeth">
+  <figcaption>A T-Rex on display in the Manchester University Museum.</figcaption>
+</figure>
+```
+- A figure doesn't need to be an image, it is an independent unit of content which can express your meaning in a compact way and provide essential information to your main text.
+
+- Figures can be several images, audio, a code snippet, video, equations, a table and so on and so forth.
+
+***
+
+#### Audio & Video content
+
+- Thanks to HTML5 we can now insert audio and video directly using the ```<audio>``` & ```<video>``` tags.
+
+***
+
+**Video elements**
+
+- 
