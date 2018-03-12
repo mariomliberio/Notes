@@ -341,7 +341,7 @@ play, the lights should be down low]</span>.</p>
 
 ***
 
-#### Audio & Video content
+#### Audio & Video content 
 
 - Thanks to HTML5 we can now insert audio and video directly using the ```<audio>``` & ```<video>``` tags.
 
@@ -349,4 +349,69 @@ play, the lights should be down low]</span>.</p>
 
 **Video elements**
 
-- 
+- The ```<video>``` tags allow you to set a video element really easily. The two main attributes are ```src=""``` and and ```controls```.
+  1. ```src=""``` works in the same way as it would with an img element, specifying a path to the desired content.
+  2. ```controls``` allows us to use the browser's inbuilt video controls for playing, pausing, controlling volumen and navigating through video content. 
+
+- We can insert ```<p>``` tags inside the video tags as fallback content. This text will be displayed if the video cannot be loaded for a certain reason. 
+
+**Video Formats**
+
+- See mozilla's [Compatibility table](https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats#Browser_compatibility).
+- It is recommended to use H.264 encoded mp4's as they are supported most widely. However these are propietary codec's so it is recommended to not use them if we are concerned about using only open source tools. 
+
+#### So how do we support multiple codecs and formats for our videos??
+
+- We can take the source attribute out of the video tag and make it a ```<source>``` tag directly inside the ```<video>``` tag. 
+
+- Inside our source tags we can then specify the actual source with a ```src=""``` attribute and its corresponding filepath.
+
+- Inside our source tags we also have to give a ```type=``` attribute. This specifies the video type and therefore browser can directly skip the  possible unsupported formats. Let's look at an example:
+```
+<video controls>
+  <source src="rabbit320.mp4" type="video/mp4">
+  <source src="rabbit320.webm" type="video/webm">
+  <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p>
+</video>
+```
+
+ **More features for our videos.**
+
+- These are not the only features present for our videos. We can also add a whole series of conditions. For example we can define:
+  1. ```width=""``` & ```height=""``` Although i would rather do this in CSS for complaince with all types of screen sizes.
+  2. ```autoplay``` to make the video play on load. 
+  3. ```loop``` to make the video loop.
+  4. ```muted``` to make our video mute by default
+  5. ```poster=""``` this attribute takes the url of an image so it is displayed before the video is played.
+  6. ```preload=""``` Can be set to 3 different values: 
+    - ```"none"```: Does not buffer the file. 
+    - ```"auto"```: Buffers the file.
+    - ```"metadata"```: Only buffers the metadata for the file. 
+
+**The ```<audio>``` element**
+
+- Works in the same way as the video element with some slight differences.
+  1. It does not support the ```width=""``` & ```height=""``` attributes.
+  2. There is no ```poster``` attribute. Although you could just stick an image on top of it and remove it onclick with javascript to recreate the same effect.
+
+**Displaying video text tracks**
+
+- It is important to think about accesibility when developing a website. For example, many people have auditary impediments which difficult hearing audio from a video. It can also be that the video is being played in a loud public environment or that a person is learning the language in which the video is recorded.
+
+- Thanks to HTML5 we can provide a transcript of the contents with the ```<track>``` tag & ```WEBVTT`` format.
+
+- WEBVTT is a text file format for displaying text on video. It is often used for subtitles, captions & timed descriptions. A typical WEBVTT text file looks like this:
+```
+WEBVTT
+
+1
+00:00:22.230 --> 00:00:24.606
+This is the first subtitle.
+
+2
+00:00:30.739 --> 00:00:34.074
+This is the second.
+
+  ...
+```
+ 
