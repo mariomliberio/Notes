@@ -414,4 +414,6 @@ This is the second.
 
   ...
 ```
- 
+ #### So how do we link a vtt file with our video?
+
+ - 
