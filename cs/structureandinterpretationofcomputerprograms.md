@@ -1,8 +1,4 @@
-# cs 61 Uc Berkley
-
-### Lecture 1 Functional Programming.
-
-**Disclaimer: These lectures follow the book Structure and Interpretation of Computer Programs**
+# Notes of Structure And Interpretation of Computer Programs
 
 - This book is available at mitpress.mit.edu for free, just google it.
 
@@ -83,5 +79,43 @@
 ***
 
 **Naming and the Environment**
+
+-  A critical aspect of any programming language is the means used to give names to refer to computational objects. We say that the name identifies a *variable* whose *value is the object*
+
+- In the scheme dialect of Lisp, we name things with ```define```. For example:
+```
+(define size 2)
+```
+- This makes the interpreter associate the value 2 with the name ```size```. Once this association has been made, we can refer to the value 2 by the name ```size```:
+```
+size
+> 2
+(* 5 size)
+> 10
+
+(define pi 3.14159)
+(define radius 10)
+(* pi (* radius radius))
+> 314.159
+```
+- In the ```pi``` ```radius``` example we first multiply ```radius * radius``` therefore 10 * 10 = 100, and then we multiply this by ```pi``` therefore the interpreter returns 314.159.
+
+- Here is another example, building on the previous (therefore ```pi``` = 3.14159 and ```radius``` = 10:
+```
+(define circumference (* 2 pi radius))
+circumference
+> 62.8318
+```
+- When we call ```circumference``` it is multiplying ```pi``` by ```radius``` and by ```2``` therefore it returns 62.8318.
+
+- ```Define``` is our languages simplest method of abstraction. It allows us to use simple names to refer to the result of compound operations. 
+
+- Computational objects may have very complex structures, and it would be inconvenient to have to remember all the details and repeat them everytime we want to use them. Complex programs are built by building, step by step, computational objects of increasing complexity. These name-object associations can be created incrememntally in succesive interactions. This encourages incremental develpment and testing of programs and is largely responsible for programs consisting of a large number of simple procedures. 
+
+- In order to associate values with symbols and reusing them, the interpret must mantain some sort of memory that keeps track of name-object pairs. This is called the *environment* ( more precisely the *global environment*, since a computation may involve a number of different environments)
+
+***
+
+**Evaluating Combinations**
 
 -  
