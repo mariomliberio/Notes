@@ -416,4 +416,16 @@ This is the second.
 ```
  #### So how do we link a vtt file with our video?
 
- - 
+ - First we save the .vtt file in a sensible place, like the same directory as the page of the video.
+ - Then we link it using ```<track>``` tags. This has to be placed inside ```<audio>``` or ```<video>``` tags after the ```<source>``` elements. We assign it 3 attributes to specify this content:
+  1. ```kind=""```: Which can take a value of ```subtitles```, ```captions``` & ```descriptions```.
+  2. ```src=""```: Which specifies the filepath.
+  3. ```srclang=""```: Which specifies the language of this text.
+
+  ***
+
+  **Object, iFrame & other embedding Technologies**
+
+  **```<iframe>```**
+
+  - 
