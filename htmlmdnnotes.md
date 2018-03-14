@@ -437,4 +437,77 @@ This is the second.
 
   **```<iframe>```**
 
-  - 
+  - ```<iframe>``` elements are designed to embed other web documents into your current document. This can be video, from an online video provider, commenting systems, maps, advertisement banners and many more. 
+
+  - However there are serious security concerns to consider when dealing with iframe's. They are often used when attackers compromise websites as they are an easy module to attack and inject malicious code hosted somewhere else.
+
+  - Let's look at an example of a basic ```<iframe>```:
+
+  ```
+  <iframe src="https://developer.mozilla.org/en-US/docs/Glossary"
+        width="100%" height="500" frameborder="0"
+        allowfullscreen sandbox>
+  <p> <a href="https://developer.mozilla.org/en-US/docs/Glossary">
+    Fallback link for browsers that don't support iframes
+  </a> </p>
+</iframe>
+```
+
+- This example uses the essential attributes when using an ```<iframe>```. Let's go through them in more detail:
+  1. ```allowfullscreen```: If set, the ```<iframe>``` can be placed in fullscreen mode.
+  2. ```frameborder```: If set to 1, the browser will draw a border around the ```<iframe>```. If set to 0, there will be no border. However it is better practice to do this styling through CSS.
+  3. ```src``` : Works in the same way as with ```<video>``` ```<img>``` tags. 
+  4. ```width``` & ```height``` : same as in other tags.
+  5. Fallback Content :  Similar as ```<video>``` elements  you can include fallback content between your ```<iframe>``` tags. In the example above there is a link to the mozilla glossary. 
+  6. ```sandbox``` : This attribute for modern web browsers requests heightened security settings.
+
+**Iframe security concerns**
+
+- As mentioned above, there are many security concerns related to ```<iframe>```'s. They are often the most common attack vector's for black hat hackers. One of these common attack method's is clickjacking, where a hacker will embed an invisible iframe into your website and use it to capture user's interaction. It is common to mislead users in this way to reveal their sensitive data. 
+
+- Only embed when necessary! It may be necessary to do it if a youtube video is critical to your page, or a map from google map is necessary to give directions to a business. But avoiding creating unecessary embed content is a good way of avoiding further problems. 
+
+**Use HTTPS**
+
+- HTTPS is the encrypted version of the HTTP protocol. It reduces the chance that remote content will be tampered with and it prevents embedded content from accesing content in your parent document and vice-versa. 
+- However using HTTPS requires a security certificate, which can be expensive. IF you cant get one this may be a an affordable risk **but** never embed third party content with HTTP!!!! All the reputable companies which allow embedding their services through ```<iframe```'s will allow you to do it through HTTPS.
+
+**Use the ```sandbox``` attribute**
+
+- A container for code where it can be used appropiately but cant cause harm to the rest of the codebase is called a **```sandbox```**.
+
+- Unsandboxed content can do way to many things such as executing Javascript, submitting forms, creating popup windows etc. By default you should impose restrictions using the ```sandbox``` attribute with no parameters.
+
+- If absolutely required, you can give attributes to ```sandbox=""``` one by one, see [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attr-sandbox) for all available attributes. You should *never* add both ```allow-scripts``` and ```allow-same-origin``` to your ```sandbox``` attribute. If that was the case,embedded content could bypass the same orgin security policy that stops sites for executing scripts, and could just turn off sandboxing all together. 
+
+**Configure Content Security Policy directives**
+
+- CSP provides a set of http headers (metadata sent along with your web pages, when they are served from a server) designed to improve the security of your HTML document. When it comes to securing ```<iframe>```'s you can configure your server to send the ```X-Frame-Options``` header. This can prevent other websites from embedding content on your website (and therefore clickjacking).
+
+
+**The ```<embed>``` and ```<object>``` elements**
+
+- These two tags are general purpose embedding tools for multiple types of external content, including plugin technologies such as java applets, flash, pdf and others... . 
+
+- However, with the rise of javascript, these elements are no longer used commonly. Flash is no longer popular, PDF's tend to be better when linked instead of embeeded and image and video have their own html tags that handle them. Nevertheless here is the example of an embed pdf ```<object>``` as this might still be useful nowadays. 
+
+```
+<object data="mypdf.pdf" type="application/pdf"
+        width="800" height="1200" typemustmatch>
+  <p>You don't have a PDF plugin, but you can <a href="myfile.pdf">download the PDF file.</a></p>
+</object>
+```
+
+***
+
+**Adding Vector Graphics To The Web**
+
+#### What are vector graphics?
+
+- These are images defined using algorythms, a vector image contains shape and path definitions that the computer will interpret to generate an image. 
+
+- The ```.svg``` format is the most commonly used vector graphic format on the web.
+
+**Differences between raster (.png) & vector (.svg)**
+
+- 
