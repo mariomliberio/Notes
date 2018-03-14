@@ -148,13 +148,14 @@
 **Blockquotes**
 
 - If you are quoting text from an external source it is nice to use ```<blockquote>``` tags to mark this in HTML formatting directly. For example:
+
 ```
 <blockquote>
   <p>To be fair, you have to have a very high IQ to understand Rick and Morty. The humour is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer’s head. There’s also Rick’s nihilistic outlook, which is deftly woven into his characterisation- his personal philosophy draws heavily from Narodnaya Volya literature, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of these jokes, to realise that they’re not just funny- they say something deep about LIFE. As a consequence people who dislike Rick & Morty truly ARE idiots- of course they wouldn’t appreciate, for instance, the humour in Rick’s existential catchphrase “Wubba Lubba Dub Dub,” which itself is a cryptic reference to Turgenev’s Russian epic Fathers and Sons. I’m smirking right now just imagining one of those addlepated simpletons scratching their heads in confusion as Dan Harmon’s genius wit unfolds itself on their television screens. What fools.. how I pity them. 😂
-
   And yes, by the way, i DO have a Rick & Morty tattoo. And no, you cannot see it. It’s for the ladies’ eyes only- and even then they have to demonstrate that they’re within 5 IQ points of my own (preferably lower) beforehand. Nothin personnel kid 😎</p>
 </blockquote> 
 ```
+
 - As seen above the OG Rick & Morty copypasta is formatted to see that we are not the author of this infamy.
 
 **Inline Quotations**
@@ -168,17 +169,20 @@
 **Contact Details**
 
 - HTML has an inbuilt tag for marking up the contact address of the author. This is the ```<address>``` tag. Here is an example:
+
 ```
 <address>
   <p>Mario Liberio, Cock street, Brussels</p>
 </address>
 ```
+
 - Remember this element is supposed to be used for the author of the document, not any address.
 - Inserting an ```<a>``` tag inside our ```<address>``` tags redirecting to a contact page is also OK.
 
 **Superscript and Subscript**
 
 - Ocasionally you will need to use superscript or subscript in your HTML documents, especially if you are dealing with Mathematics or Science. For that purpose we use the ```<sup>``` & ```<sub>``` tags. For Example:
+
 ```
 <p>My Birthday is on the 1<sup>st</sup> of December.</p>
 <p>Water's chemical formula is H<sub>2</sub>O</p>
@@ -197,6 +201,7 @@
 **Time & Dates**
 
 - ```<time>``` Used for specifically marking up time and dates. With the use of the ```datetime=""``` attribute we can become more specific on the time that will be output. Here are some examples from the MDN:
+
 ```
 <!-- Standard simple date -->
 <time datetime="2016-01-20">20 January 2016</time>
@@ -215,6 +220,7 @@
 <!-- Calling out a specific week number -->
 <time datetime="2016-W04">The fourth week of 2016</time>
 ```
+
 ***
 
 **Document & Website structure**
