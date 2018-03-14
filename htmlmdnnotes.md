@@ -305,7 +305,7 @@ play, the lights should be down low]</span>.</p>
 
 - If our image is in the same directory as our html page the only thing we need to do is give the filename in the ```src=""``` like so: ```<img src="panda.jpg">``` This will display our image of a panda. 
 
-- If we have a separate images directory for organization we simply have to adapt our source like so: ```<img src="images/panda.jpg">.
+- If we have a separate images directory for organization we simply have to adapt our source like so: ```<img src="images/panda.jpg">``` .
 
 - If our image is in a parent directory like so: ```<img src="../panda.jpg">```.
 
