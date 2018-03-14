@@ -316,6 +316,7 @@ play, the lights should be down low]</span>.</p>
 **Alternative text attribute**
 
 - Similar to attributes when creating hyperlinks, the ```alt=""``` attribute  will  replace the image in the case that the image is not loading onto our website hence the name alternative text. For example:
+
 ``` 
 <img src="panda.jpg" alt="A panda.">
 ```
@@ -333,6 +334,7 @@ play, the lights should be down low]</span>.</p>
 **Annotating images with figures and figure captions**
 
 - A good solution to create figures and figure captions in HTML was introduced in HTML5 with the ```<figure>``` & ```<figcaption>``` tags. This could previously be done with ```<div>``` tags however it is prefered to use semantically related tags like ```<figure>```. Here is an example:
+
 ```
 <figure>
   <img src="images/dinosaur.jpg"
@@ -341,6 +343,7 @@ play, the lights should be down low]</span>.</p>
   <figcaption>A T-Rex on display in the Manchester University Museum.</figcaption>
 </figure>
 ```
+
 - A figure doesn't need to be an image, it is an independent unit of content which can express your meaning in a compact way and provide essential information to your main text.
 
 - Figures can be several images, audio, a code snippet, video, equations, a table and so on and so forth.
@@ -373,6 +376,7 @@ play, the lights should be down low]</span>.</p>
 - Inside our source tags we can then specify the actual source with a ```src=""``` attribute and its corresponding filepath.
 
 - Inside our source tags we also have to give a ```type=``` attribute. This specifies the video type and therefore browser can directly skip the  possible unsupported formats. Let's look at an example:
+
 ```
 <video controls>
   <source src="rabbit320.mp4" type="video/mp4">
@@ -407,6 +411,7 @@ play, the lights should be down low]</span>.</p>
 - Thanks to HTML5 we can provide a transcript of the contents with the ```<track>``` tag & ```WEBVTT`` format.
 
 - WEBVTT is a text file format for displaying text on video. It is often used for subtitles, captions & timed descriptions. A typical WEBVTT text file looks like this:
+
 ```
 WEBVTT
 
@@ -420,6 +425,7 @@ This is the second.
 
   ...
 ```
+
  #### So how do we link a vtt file with our video?
 
  - First we save the .vtt file in a sensible place, like the same directory as the page of the video.
