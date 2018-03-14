@@ -88,6 +88,7 @@
 (define size 2)
 ```
 - This makes the interpreter associate the value 2 with the name ```size```. Once this association has been made, we can refer to the value 2 by the name ```size```:
+
 ```
 size
 > 2
@@ -99,14 +100,17 @@ size
 (* pi (* radius radius))
 > 314.159
 ```
+
 - In the ```pi``` ```radius``` example we first multiply ```radius * radius``` therefore 10 * 10 = 100, and then we multiply this by ```pi``` therefore the interpreter returns 314.159.
 
 - Here is another example, building on the previous (therefore ```pi``` = 3.14159 and ```radius``` = 10:
+
 ```
 (define circumference (* 2 pi radius))
 circumference
 > 62.8318
 ```
+
 - When we call ```circumference``` it is multiplying ```pi``` by ```radius``` and by ```2``` therefore it returns 62.8318.
 
 - ```Define``` is our languages simplest method of abstraction. It allows us to use simple names to refer to the result of compound operations. 
@@ -128,9 +132,11 @@ circumference
 - This simple rule illustrates some important points about processes. First, the first step dictates that in order to accomplish the evaluation process for a combination we must first evaluate each element of the combination. This the evaluation is *recursive* in nature, it includes as one of its steps, the need to invoke the rule itself. 
 
 -  The idea of recursion, can easily express what would seem rather complex in a deeply nested combination. For example:
+
 ```
 (* (+ 2 (* 4 6))
     (+ 3 5 7))
 ```
+
 - Here, the evaluation rule has to be applied to four different combinations. If we represent this visually it looks like so:
  ![Figure 1.1](images/strcpfigure1-1.gif).
