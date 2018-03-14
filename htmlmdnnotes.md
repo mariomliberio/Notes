@@ -510,4 +510,34 @@ This is the second.
 
 **Differences between raster (.png) & vector (.svg)**
 
+- A png image will become pixelated once you start zooming into it because it contains information on where each pixel should be and what color it should be. When zoomed, it will just increase the size corresponding to each pixel therfore the image starts to look blocky.
+
+- On the other side, an svg will continue looking well once zoomed in because no matter what size it is the algorithms will work out the shape and the values will scale up as it gets bigger.
+
+- Moreover, vector image files are much lighter than raster because they only contain information of the algorhythms instead of information on every pixel individually. 
+
+**What is SVG?**
+
+- SVG is an XML based language for describing vector images. It is a markup language like HTML except it is used to mark up graphics instead of text content. 
+
+- It uses simple elements like ```<circle>``` & ```<rect>``` to create these shapes. It can also use more advanced elements like ```<feColorMatrix>``` uses a transformation matrix to change colors, ```<animate>``` to animate parts of the vector graphics and ```<mask>``` to apply a mask over the top of your image. 
+
+- Let's look at a simple example that creates a rectangle and a circle:
+
+```
+<svg version="1.1"
+     baseProfile="full"
+     width="300" height="200"
+     xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="black" />
+  <circle cx="150" cy="100" r="90" fill="blue" />
+</svg>
+```
+
+- Try it out in your own HTML page!
+
+- While you could handcode your ```<svg>``` element like this, most people will use a graphics editor like Inkscape or Illustrator which allow you to create them using various graphic tools. 
+
+#### What are other advantages of using SVG?
+
 - 
