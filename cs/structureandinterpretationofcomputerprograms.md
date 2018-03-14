@@ -119,7 +119,18 @@ circumference
 **Evaluating Combinations**
 
 -  One of our goals in this first chapter is to isolate issues about thinking procedurally. When evaluating combinations, the interpreter follows a procedure.
+
 - To evaluate a combination, do the following:
     1. Evaluate the subexpressions of the combination
     2. Apply the procedure that is the value of the leftmost subexpression (the operator) to the arguments which are the values of the other subexpressions (the operands).
+
 - This simple rule illustrates some important points about processes. First, the first step dictates that in order to accomplish the evaluation process for a combination we must first evaluate each element of the combination. This the evaluation is *recursive* in nature, it includes as one of its steps, the need to invoke the rule itself. 
+
+-  The idea of recursion, can easily express what would seem rather complex in a deeply nested combination. For example:
+```
+(* (+ 2 (* 4 6))
+    (+ 3 5 7))
+```
+- Here, the evaluation rule has to be applied to four different combinations. If we represent this visually it looks like so:
+ ![Figure 1.1](images/strcpfigure1-1.gif).
+ 
