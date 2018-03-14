@@ -89,3 +89,52 @@ hello
 > 5
 ```
 - There is about a dozen of *special forms* in the Scheme dialect of Lisp.
+
+- Let's look back at our previous ```define square``` and split its components one by one.
+```
+(define (square x)
+    (* x x))
+(square (+ 2 3))
+```
+- Our first ```x``` is the *formal parameter* . It is the name for an argument to a function. ```(* x x)``` is the body. These two are part of the definition of a function. ```(+ 2 3)``` is the *actual argument expression* . The *actual argument value* is ```5``` which is invisible but is the result of the *actual argument expression* .
+
+- Let's look at another example:
+```
+(define (plural wd))
+    (word wd 's)
+> plural
+
+(plural 'computer)
+> computers
+
+(plural 'book)
+> books
+
+(plural 'boy)
+> boys
+```
+
+- In our ```'boy``` example; ```'boy``` is the *actual argument expression* while ```boy``` is the *actual argument value*. ```wd``` is our formal parameter, we don't use word for that because it is a primitive function. 
+
+- However we can run into problems by doing this:
+```
+(plural 'fly)
+> flys
+```
+- ```flys``` doesn't mean anything in english, therefore were gonna have to add a condition to fix this. To do this were gonna use an ```if``` statement, an ```equal?``` *predicate function*, this is a function that returns a boolean. Predicates usually end in a question mark. 
+```
+(define (plural wd)
+    (if (equal? (last wd) 'y)
+    (word (bl wd) 'ies)    // bl --> butlast (all but the last letter)
+    (word wd 's)))
+> plural
+
+(plural 'book)
+> books
+
+(plural 'fly)
+> flies
+
+(plural 'boy)
+> boies // we have broken boy... How would we fix this?
+```

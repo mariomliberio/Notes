@@ -118,4 +118,8 @@ circumference
 
 **Evaluating Combinations**
 
--  
+-  One of our goals in this first chapter is to isolate issues about thinking procedurally. When evaluating combinations, the interpreter follows a procedure.
+- To evaluate a combination, do the following:
+    1. Evaluate the subexpressions of the combination
+    2. Apply the procedure that is the value of the leftmost subexpression (the operator) to the arguments which are the values of the other subexpressions (the operands).
+- This simple rule illustrates some important points about processes. First, the first step dictates that in order to accomplish the evaluation process for a combination we must first evaluate each element of the combination. This the evaluation is *recursive* in nature, it includes as one of its steps, the need to invoke the rule itself. 
