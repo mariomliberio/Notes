@@ -28,19 +28,16 @@
 - If you present Lisp with a number, lets say *486* , the interpreter will respond by printing *486*.
 
 - Expressions representing numbers, may be combined with expressions representing a primitive procedure, such as + (addition) or * (multiplication) to form a *compound expression*. For Example:
+
 ```
 (+ 137 349)
 486
-
 (- 1000 334)
 666
-
 (* 5 99)
 495
-
 (/ 10 5)
 2
-
 (+ 2.7 10)
 12.7
 ```
@@ -52,23 +49,27 @@
 - The value of these combinations are obtained by applying the procedure specified by the operator, to the arguments which are the values of the operands.
 
 - This convention in Lisp of applying the operator to the left of the operands is called *prefix notation*. While this might seem counterintuitive, it allows us to create procedures which may take an arbitrary number of arguments such as:
+
 ```
 (* 25 4 12)
 1200
-
 (+ 21 35 12 7)
 75
 ```
+
 - This avoids ambiguity as the operator is always on the left, and the whole combination is between parenthesis.
 
 - A second advantage of prefix notation is that it allows combinations to be nested in a straightforward fashion as so:
+
 ```
 (+ (* 3 5) (- 10 6))
 19
 ```
+
 - These are called *compositional functions*.
 
 - There is no limit to the depth of nesting and the overall complexity of expressions our Lisp interpreter can evaluate. For example the following would seem quite complicated to a human (even though it is basic algebra):
+
 ```
 (+ (* 3 (+ (* 2 4) (+ 3 5))) (+ (- 10 7) 6))
 57
@@ -133,4 +134,3 @@ circumference
 ```
 - Here, the evaluation rule has to be applied to four different combinations. If we represent this visually it looks like so:
  ![Figure 1.1](images/strcpfigure1-1.gif).
- 
