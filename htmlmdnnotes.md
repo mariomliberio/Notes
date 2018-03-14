@@ -540,4 +540,37 @@ This is the second.
 
 #### What are other advantages of using SVG?
 
+- Text in vector images remains accesible (good for SEO)
+
+- SVG's lend themselves well to styling/scripting, because each component of the image can be styled through CSS or scripted via Javascript.
+
+#### What are the disadvantages of SVG?
+
+- SVG's can get very complicated very quickly, meaning complex SVG's can have large file sizes and can take significant processing power and time.
+
+- SVG can be harder to create than raster images, depending on what kind of image you are creating.
+
+- SVG is not supported in older browsers.
+
+- Raster graphics are arguably better for images such as photos for the reasons described above.
+
+***
+
+**Adding SVG to your pages**
+
+**The quick way:```<img>```**
+
+- To embed an svg using an ```<img>``` tag you need to reference it in ```src=""``` as you would expect.You will also need a ```height=""``` and ```width=""``` attribute as SVG has no inherent aspect ratio. 
+
+- Pros of using ```<img>```:
+  1. Quick familiar syntax.
+  2. Easily make your image a hyperlink by nesting ```<img>``` inside ```<a>``` tags.
+
+- Cons of using ```<img>```:
+  1. You cannot manipulate the image with Javascript
+  2. If you want to controle with CSS, you must include inline CSS in your SVG code, external stylesheets have no effect on SVG files.
+  3. You cannot restyle with CSS pseudoclasses.
+
+**Troubleshooting and cross-browser support**
+
 - 
