@@ -575,4 +575,54 @@ This is the second.
 
 - For browsers that don't support SVG (IE8, Android 2.3) you can reference a PNG/JPG using the ```src=""``` attribute and use a ```srcset=""``` attribute for the SVG.
 
-- You can also use SVGs as CSS background images 
+- You can also use SVGs as CSS background images:
+
+```
+background: url("fallback.png") no-repeat center;
+background-image: url("image.svg");
+background-size: contain;
+```
+
+- In the previous snippet, older browsers will use the png while never will use the svg. 
+
+- Inserting svg using CSS background means that it cant be manipulated with javascript and it will be limited by CSS.
+
+**Inlining SVG**
+
+- To insert SVG directly into your html you can do so with ```<svg></svg>``` tags. Let's look at a simple example:
+
+```
+<svg width="300" height="200">
+    <rect width="100%" height="100%" fill="green" />
+</svg>
+```
+
+- Pros of using ```<svg>```:
+  1. Putting your SVG inline saves an HTTP request and can reduce loading time, depending on the size of the svg.
+  2. You can assign ```class=""``` and ```id=""``` and style them with CSS, within your SVG or in your CSS style rules.
+  3. It is the only approach that lets you use CSS interactions and CSS animations on your SVG. (We will look at this further in CSS notes)
+  4. You can make SVG markup into a hyperlink by wrapping it with ```<a>``` tags.
+
+- Cons of using ```<svg>```: 
+  1. Only suitable if you are using the SVG only once, duplaction makes this resource intensive.
+  2. Extra SVG code increases the size of your HTML file. 
+  3. The browser cannot cache inline SVG like it would with a regular image.
+  4. You may include a fallback with a ```<foreignObject>``` element, but browsers who do support SVG will still download the fallback images.
+
+**How to embed SVG with an ```<iframe>```**
+
+- You can open SVG images with your browser just like webpages. Embedding an SVG document within an ```<iframe>``` is the same as with other elements. Here is an example:
+
+```
+<iframe src="triangle.svg" width="500" height="500" sandbox>
+    <img src="triangle.png" alt="Triangle with three unequal sides" />
+</iframe>
+```
+
+- This is not the best method ot choose, it has these cons:
+  1. ```<iframe>``` does have a fallback mechanism but browsers only display it if they lack support for ```<iframe>``` alltogether.
+  2. Unless the SVG and the current webpage have the same orgin you cannot use JS to manipulate the SVG.
+
+***
+
+**Responsive Images**
