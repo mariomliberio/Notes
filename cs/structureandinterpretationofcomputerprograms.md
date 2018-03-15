@@ -198,4 +198,29 @@ circumference
 > 81
 ```
 
--  
+-  We can also use ```square``` as a building block for defining other procedures. For example, x<sup>2</sup> + y<sup>2</sup> can be expressed as:
+
+```
+(+ (square x)(square y))
+```
+
+- We can easily define a procedure ```sum-of-squares``` that given any 2 numbers as arguments, produces the sum of theri squares:
+
+```
+(define (sum-of-squares x y)
+    (+ (square x) (square y)))
+
+(sum-of-square 3 4)
+> 25
+```
+
+- Now we can use ```sum-of-squares``` as a building block in constructing further procedures:
+
+```
+(define (f a)
+    (sum-of-squares (+ a 1) (* a 2)))
+
+(f 5)
+> 136
+```
+
