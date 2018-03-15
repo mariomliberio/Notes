@@ -6,8 +6,8 @@
 
 - The resources I have used / I am using for these notes as of 15-3-2018 are these:
     1. HTML: For HTML im following the MDN tutorials, as you would see if you read them, I have not deviated much from their content. I plan on also starting a glossary soon. 
-    2. PHP: PHP notes follow the introductory PHP / SQL tutorial form openclassrooms, however I am considering changing source as it is often not specific enough and therefore doesn't suit my goals with these notes.
-    3. CS : For computer science and logic I am following the curriculum of [Teach Yourself Computer Science](https://teachyourselfcs.com/). I am taking these real slowly as it uses academic sources and can be slightly cryptic at times. 
+    2. CS : For computer science and logic I am following the curriculum of [Teach Yourself Computer Science](https://teachyourselfcs.com/). I am taking these real slowly as it uses academic sources and can be slightly cryptic at times.
+    3. PHP: PHP notes follow the introductory PHP / SQL tutorial from openclassrooms, however I am considering changing source as it is often not specific enough and therefore doesn't suit my goals with these notes.
     4. CSS: *To be started*
     5. JS: *To be started*
 
