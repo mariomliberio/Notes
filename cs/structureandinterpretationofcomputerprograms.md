@@ -164,4 +164,38 @@ circumference
 
 **Compound Procedures**
 
-- 
+- We have identified in Lisp some elements that are necessary for a powerful programming language:
+    - Numbers and arithmetic operations are primitive data and procedures.
+    - Nesting of combinations provides a means of combining operations.
+    - Definitions that assciate neams with values provide some abstraction.
+
+- Now we will learn about *procedure definitions*, a more powerful abstraction technique by which a compound operation can be given a name and the be referred as a unit. 
+
+- Let's look at the idea of squaring, to multiply something by itself. In scheme dialect it is expressed as:
+
+```
+(define (square x ) (* x x))
+```
+
+- We have here a *compound procedure* with the name ```square```. This procedure represents the operation of multiplying something by itself. The thing to be multiplied is given the local name ```x```. Evaluating the definition creates the compound procedure and associates it with the name ```square```.
+
+- The general form of a procedure definition is: 
+
+```
+(define (<name> <formal parameters>) <body>)
+```
+
+- The *<name>* is the symbol or word to be associated with the procedure definition in an environment. The *<formal-parameters>* are the names used within the body of a procedure corresponding to the arguments of the procedure. The *<body>* is an expression that will give us the value of the procedure application when the formal parameters are replaced by an actual argument to which procedure is applied. 
+
+- Having defined ```square```, now we can use it:
+
+```
+(square 21)
+> 441
+(square (+ 2 5))
+> 49
+(square(square 3))
+> 81
+```
+
+-  
