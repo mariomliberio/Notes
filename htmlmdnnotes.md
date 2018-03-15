@@ -573,4 +573,6 @@ This is the second.
 
 **Troubleshooting and cross-browser support**
 
-- 
+- For browsers that don't support SVG (IE8, Android 2.3) you can reference a PNG/JPG using the ```src=""``` attribute and use a ```srcset=""``` attribute for the SVG.
+
+- You can also use SVGs as CSS background images 

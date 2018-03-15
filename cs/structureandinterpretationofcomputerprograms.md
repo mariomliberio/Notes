@@ -140,3 +140,7 @@ circumference
 
 - Here, the evaluation rule has to be applied to four different combinations. If we represent this visually it looks like so:
  ![Figure 1.1](images/strcpfigure1-1.gif).
+ 
+ - Each combination is represented by a node with branches corresponding to its operators and operands. The terminal nodes, those who have no branches coming from them are either operators or numbers. The value of the operands move upwards, starting from therminal nodes and combining at higher and higher levels. Soon enough, we shall see that recursion is a powerful technique for dealing with hierarchical tree-like objects. This type of upwards progression in the evaluation rule is an example of a process known as *tree accumulation*.
+
+ - 
