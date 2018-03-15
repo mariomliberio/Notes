@@ -143,4 +143,25 @@ circumference
  
  - Each combination is represented by a node with branches corresponding to its operators and operands. The terminal nodes, those who have no branches coming from them are either operators or numbers. The value of the operands move upwards, starting from therminal nodes and combining at higher and higher levels. Soon enough, we shall see that recursion is a powerful technique for dealing with hierarchical tree-like objects. This type of upwards progression in the evaluation rule is an example of a process known as *tree accumulation*.
 
- - 
+ - Before evaluating combinations, we have to evaluate primitive expressions. We take care of these cases by stipulating that:
+    - Values of numerals are the numbers they name.
+    - Values of built-in operators are the instruction sequences that carry out the operations.
+    - Values of other names are objects associated with those names in the (global or local) environment. 
+
+- We could look at the second rule as a special case of the third one because symbols such as ```+``` or ```*``` are objects built in the global environment. 
+
+- The key point to notice here is the role of the environment in determining the meaning of symbols in expressions.
+
+- In an interactive language like Lisp, it is meaningless to speak of an expression such as ```(x + 1)``` without specifying information about the meaning of ```x``` in our working environment.  
+
+- Note that the evaluation rule given above, does not handle definitions. Eg. evaulating ```(define x 3)``` does not apply ```define``` to two arguments, one being the value of the symbol ```x``` and the other ```3``` since the purpose of ```define``` is precisely to associate ```x``` with a value, in this case ```3```. In short ```(define x 3)``` is not a combination. 
+
+- These exceptions are called *special forms*. ```define``` is the first example of a special form that we have looked at but there are a few more.
+
+- Each special form has its own unique evaluation rule.  These expressions and their associated evaluation rule constitute the *syntax* of the programming language. In comparaison to other languages, Lisp has very simple syntax, therefore it is a good usecase to learn the basics of programming.  
+
+***
+
+**Compound Procedures**
+
+- 
