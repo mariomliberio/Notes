@@ -119,10 +119,10 @@
 - When linking to files such as PDF, MP3, or DOC we should specify this inside our ```<a>``` tag to avoid people on low bandwith downloading something that would be uneccesary and too time consuming. Therefore if we were linking to an MP3 it would be best practice to do it like so: ```<a href="http://www.example.com/song.mp3"> Download the song (MP3, 10MB)</a>```.
 - We can also provide a default filename when linking to a download using the ```download=""``` attribute inside our ```<a>``` tags. Eg.: ```<a href="http://www.example.com/song.mp3" download="sicksongbro.mp3">Download the song (MP3, 10MB)</a>```.
 #### And email links?
-- It is also possible to create links that will open a new email to a specific address instead of linking to a page, pagesection or file. For example: ```<a href="mailto:cunt@gmail.com"> Send an email to Cunt </a>```
+- It is also possible to create links that will open a new email to a specific address instead of linking to a page, pagesection or file. For example: ```<a href="mailto:randomemail@gmail.com"> Send an email to random email </a>```
 - The email address itself is optional, if our href contains the ```mailto:``` text it will generate a new blank email to send without a destination address.
-- However we can also specify more in our ```mailto:``` sections for example a series of CC's, a Subject and an email Body. We can do this like so: ```<a href="mailto:cunt@gmail.com?cc=prick@gmail.com&cc=asshole@gmail.com&subject=You%20are%20a%20bunch%20of%20little%20shits&body=Hello%20Assholes"> ```
-- This previous example would send a mail to cunt, prick and asshole with the subject You are a bunch of little shits and the body of Hello Assholes. 
+- However we can also specify more in our ```mailto:``` sections for example a series of CC's, a Subject and an email Body. We can do this like so: ```<a href="mailto:randomemail@gmail.com?cc=randomemail1@gmail.com&cc=randomemail2@gmail.com&subject=You%20are%20some%20emails&body=Hello%20Guys"> ```
+- This previous example would send a mail to randomemail1, randomemail2 and randomemail3 with the subject You are some emails and the body of Hello guys. 
 ***
 **Advanced Text Formatting**
 - We are going to review some less known HTML elements which are not necessary to create a basic website, however they can be handy to execute specific roles for text without the need to style them through CSS.
@@ -172,7 +172,7 @@
 
 ```
 <address>
-  <p>Mario Liberio, Cock street, Brussels</p>
+  <p>Mario Liberio, Random street, Brussels</p>
 </address>
 ```
 
