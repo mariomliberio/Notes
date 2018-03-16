@@ -837,4 +837,36 @@ ble>
 
 - The ```scope=""``` attribute can be added to the ```<th>``` element to tell screenreaders exactly what cells the header is a header for. 
 
-- 
+- With it you can define column headers like so:
+
+```
+<thead>
+  <tr>
+    <th scope="col">Purchase</th>
+    <th scope="col">Location</th>
+    <th scope="col">Date</th>
+    <th scope="col">Evaluation</th>
+    <th scope="col">Cost (€)</th>
+  </tr>
+</thead>
+```
+
+- And row headers aswell:
+
+```
+<tr>
+  <th scope="row">Haircut</th>
+  <td>Hairdresser</td>
+  <td>12/09</td>
+  <td>Great idea</td>
+  <td>30</td>
+</tr>
+```
+
+- ```scope=""``` has two more possible values - ```colgroup``` and ```rowgroup```. These are used for headings that sit over multiple columns or rows.
+
+**The ```id=""``` and ```headers=""``` attributes**
+
+- An alternative to using ```scope=""``` is to use ```id=""``` and ```headers=""```. They are used like so:
+  1. You add a unique ```id=""``` to each ```<th>``` element.
+  2. You add a ```headers=""``` attribute to each ```<td>``` element. Each ```headers``` attribute has to conatin a list of the ```id=""``` of all the ```<th>``` elements that act as a header for that cell.
