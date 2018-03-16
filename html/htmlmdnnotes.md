@@ -721,3 +721,32 @@ img {
 ***
 
 **HTML TABLES**
+
+- A table is structured data set in rows and columns. This could be a simple excel graph or something more advanced like a calendar or timetable.
+
+- For tables to be effective online it is necessary to style them. For this we will use CSS, however the rigid structure is setup with HTML. 
+
+#### When should you not use HTML tables?
+
+- HTML tables should be used for tabular data. Definitely not for styling your website. There are good reasons to not use HTML tables for layout such as:
+  1. Layout tables reduces accesibility for visually impaired users. Screenreaders interpret html tags and therefore it will make your website unusable for those impaired if you are styling layout using tables. 
+  2. Tables produce tag soup. Code is harder to mantain and debug.
+  3. Tables are not automatically responsive. When you use proper layout containers it is easier to make them responsive. Tables are sized according to their contetn therefore they will make a mess of your website across devices.
+
+**Creating a Table**
+
+- The content of every table should be nested between your ```<table>``` tags inside the body of your HTML.
+
+- The smallest container inside a table is a table cell, created with ```<td>``` tags.
+
+- If you want to create a row of table cells they should be nested inside ```<tr>``` tags. 
+
+**Adding headers with ```<th>``` elements**
+
+- To set table headers visually and semantically as headers we nest them inside ```<th>``` tags.   
+
+- Thanks to headers it is easier to find the data you are looking for and generally design-wise it looks better.
+
+**Allowing cells to span multiple rows and columns**
+
+- Sometimes we want cells to span multiple rows and columns. 
