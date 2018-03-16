@@ -698,4 +698,26 @@ img {
 
 - In this case ```sizes=""``` is not needed, the browser knows what resolution the display is and serves the most appropiate image in the ```srcset=""``` attribute.
 
-- Art direction:   
+- Art direction: When we talk about art direction we talk about replacing an image, depending on the size of the screen to choose images which suit better the screen size. We can use the ```<picture>``` tag for these kind of situations. This is how an example looks like:
+
+```
+<picture>
+  <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg">
+  <source media="(min-width: 800px)" srcset="elva-800w.jpg">
+  <img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva">
+</picture>
+```
+
+- The ```<source>``` elements include a ```media=""``` attribute that containes a media condition, these are tests that decide which image is shown. The first one that returns true will be displayed. If the viewport width is 799px or less the first image will be displayed. If it is larger the second will be displayed.
+
+- Just like beofre with ```<img>```, ```<source>``` can take a ```srcset=""``` attribute with multiple images referenced and ```size=""``` attributes too.
+
+- In all cases you must provide an ```<img src="" alt="">``` tag right before ```</picture>``` otherwise no images will appear. 
+
+#### Why can't we do this using CSS or JavaScript?
+
+- Because the browser will preload images for faster load times. We have to use things like ```srcset=""``` in order for the browser to preload the correct elements. Remember, Javascript is loaded after every other element therefore doing this with it would be an error.
+
+***
+
+**HTML TABLES**
