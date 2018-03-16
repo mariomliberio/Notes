@@ -230,4 +230,41 @@ circumference
 
 **The Substitution model for Procedure Application**
 
+- Compound procedure and primitave procedures follow similar order of interpretation. The interpreter evaluates the elements of a combination and applies the procedure to the arguments.
+
+- The mechanism for applying primitive procedures into arguments is built into our interpreter. For compound procedures to arguments, we evaluate the body of the procedure with each formal parameter being replaced by the corresponding argument.
+
+- Let's look at an example:
+
+```
+(f 5)
+```
+
+- We defined ```f``` in our previous section as ```(sum-of-squares (+ a 1)(* a 2))```
+
+- As we called ```(f 5)``` we replace a (the formal parameter) with 5:
+
+```
+(sum-of-squares (+ 5 1)(* 5 2))
+```
+
+- The problem has been reduced to the evaluation of a combination with two operands *((+ 5 1)(* 5 2))* and an operator *sum-of-squares*.
+
+- Therefore (+ 5 1) = 6 and (* 5 2) = 10, so we must apply *sum-of-squares* to 6 & 10. Therefore:
+
+```
+(+ (square 6) (square 10))
+(+ (* 6 6)(* 10 10))
+(+ 36 100)
+> 136
+```
+
+- This process is the *substitution model* for procedure application. It can be considered a model that determines the meaning of procedure application.
+
+- However two important points to stress about this:
+    - The purpose of the substitution model helps us think about procedure application  but not how the interpreter really works. In practice, substitution is accomplished by using a local environment for formal parameters.
+    - Over the book we will look at increasingly elaborate models of how interpreters work. The substitution model is only the first model. As things become more complicated we will use more complex and refined models.
+
+**Applicative order vs normal order**
+
 - 
