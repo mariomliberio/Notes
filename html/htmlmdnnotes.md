@@ -750,3 +750,91 @@ img {
 **Allowing cells to span multiple rows and columns**
 
 - Sometimes we want cells to span multiple rows and columns. 
+
+- Table headers and cells have the attributes ```colspan=""``` and ```rowspan=""``` which allow us to extend the column or row length of our cells. They take an unitless number value, which equals to the number of rows and columns you want spanned. 
+
+**Providing column styling to columns**
+
+
+- HTML has a method of defining styling information for an entire column of data all in one place, the ```<col>``` and ```<colgroup>``` elements. These exist because it is annoying to have to specify styling to every element in your column or using a complex selector such as ```:nth-child()```. Look at the following simple example in your HTML file:
+
+```
+ble>
+  <colgroup>
+    <col>
+    <col style="background-color: yellow">
+  </colgroup>
+  <tr>
+    <th>Data 1</th>
+    <th>Data 2</th>
+  </tr>
+  <tr>
+    <td>Calcutta</td>
+    <td>Orange</td>
+  </tr>
+  <tr>
+    <td>Robots</td>
+    <td>Jazz</td>
+  </tr>
+</table>
+```
+
+- Since we are not styling the first column we need to put an empty ```<col>``` element before it.
+
+***
+
+**HTML table advanced features and accesibility**
+
+**Adding a caption to your table with ```<caption>```**
+
+- You can give your table a caption by putting it inside a ```<caption>``` element and nesting that inside the ```<table>``` element. You should put it just beneath the opening tag. 
+
+- The caption is meant to contain a description of the table content. This is useful for all readers to get a quick idea of whether the table is useful to them as they scan the page. But it is also particularly helpful for disabled users. 
+
+**Adding structure with ```<thead>```, ```<tfoot>``` and ```<tbody>```**
+
+- These tags are usfeul hooks when using css to style your table. 
+
+- The ```<thead>``` tag needs to wrap the first part of the table, this is commonly the first row but not necsarily the case. If you are using ```<col>/<colgroup>``` tags the table header should just come below those. 
+
+- The ```<tfoot>``` element needs to wrap the part of the table that is in the footer. Usually a final row that sums up the elements in previous rows. 
+
+- The ```<tbody>``` element needs to wrap the other parts of the table content that aren't in the table header or footer. It will appear below the table header and on top of the table footer normally.
+
+**Nesting Tables**
+
+- It is possible to nest tables inside of each other as long as you include the complete structure, including the ```<table>``` element. Try the following code in your HTML document:
+
+```
+<table id="table1">
+  <tr>
+    <th>title1</th>
+    <th>title2</th>
+    <th>title3</th>
+  </tr>
+  <tr>
+    <td id="nested">
+      <table id="table2">
+        <tr>
+          <td>cell1</td>
+          <td>cell2</td>
+          <td>cell3</td>
+        </tr>
+      </table>
+    </td>
+    <td>cell2</td>
+    <td>cell3</td>
+  </tr>
+  <tr>
+    <td>cell4</td>
+    <td>cell5</td>
+    <td>cell6</td>
+  </tr>
+</table>
+```
+
+**The Scope attribute**
+
+- The ```scope=""``` attribute can be added to the ```<th>``` element to tell screenreaders exactly what cells the header is a header for. 
+
+- 
