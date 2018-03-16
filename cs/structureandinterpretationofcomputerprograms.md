@@ -224,3 +224,10 @@ circumference
 > 136
 ```
 
+- Compound procedures are used in exactly the same way as primitive procedures. Indeed, one could not tell by looking at the definition of ```sum-of-squares``` whether ```square``` was built into the interpreter, like ```+``` or ```x```, or defined as a compound procedure. 
+
+***
+
+**The Substitution model for Procedure Application**
+
+- 

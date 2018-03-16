@@ -626,3 +626,76 @@ background-size: contain;
 ***
 
 **Responsive Images**
+
+- Responsive images are very important to building a website nowadays, as users will be using a number of different screen resolutions when visiting a website, from 4k all the way down to older mobile phones, therefore it is important that our visual content changes size gracefully providing a coherent expreience throughout all screens.
+
+- You might think that vector images which we just covered will solve that problem. However, while they do solve it to a certain degree, they are not suitable for all types of images. A vector image gets very complex when dealing with such things as a picture. Therefore this is why we usually use jpegs for this purpose. 
+
+- Responsive image technologies have been implemented recently to solve the screen resolution disparity between users, usually either by resolution switching (same image but different pixel size) and art direction (different images for different spaces).
+
+-  We will focus on the ```<img>``` tags for this section, css has arguably better tools for responsive design but we will look at that in the future. 
+
+**Resolution switching: Different sizes**
+
+- Let's start with a simple image with 800 pixels width. Our ```<img>``` tag would look like so:
+
+```
+<img src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy">
+```
+
+- We can use two attributes ```srcset=""``` and ```sizes=""``` to provide several additional source images with hints to help the browser pick the right image for the right job. 
+
+- Let's look at our previous example but this time using a variety of image sizes through ```srcset=""``` and ```sizes=""```:
+
+```
+<img srcset="elva-fairy-320w.jpg 320w,
+             elva-fairy-480w.jpg 480w,
+             elva-fairy-800w.jpg 800w"
+     sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px"
+     src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy">
+```
+
+- While these two attributes look a bit complicated, they really aren't. 
+
+
+- ```srcset=""``` defines the set of iages we will allow the browser to choose between, and what size each image is. Before each comma, we write:
+  1. An image filename (elva-fairy-480w.jpg)
+  2. A space.
+  3. The image's inherent width in pixels, in this case (480w). Note that we use ```w``` not ```px```.
+
+- ```sizes=""``` defines a set of media conditions and indicates what image size would be best to choose. In the previous case we wrote:
+  1. A *media condition* ```(max-width:480px)``` describes the possible state that the screen can be in. In this case we are saying: "when the viewport width is 480 pixels or less".
+  2. A space.
+  3. The width of the slot the image will fill when the media condition is true (440px).
+
+- Thanks to this attributes, the browser will: 
+  1. Look at its device width.
+  2. Work out which media condition is in the ```sizes=""``` list is the first one to be true. 
+  3. Look at the slot size given to that media query.
+  4. Load the image referenced in the ```srcset=""``` list that most colsely matches the chosen slot size. 
+
+- Older browsers that don't support these features will just ignore them and load the image referenced in the ```src=""``` attribute as normal.
+
+**Resolution switching: Same size, different resolutions**
+
+- If you support multiple display resolutions, but everyone sees the image at the same real world size on the screen , you can allow the browser to choose an appropiate resolution image by using ```srcset=""``` with x-descriptors and without ```sizes=""``` For example:
+
+```
+<img srcset="elva-fairy-320w.jpg,
+             elva-fairy-480w.jpg 1.5x,
+             elva-fairy-640w.jpg 2x"
+     src="elva-fairy-640w.jpg" alt="Elva dressed as a fairy">
+```
+- In this example, the following CSS is applied to the image so that it will have a width of 320px:
+
+```
+img {
+  width: 320px;
+}
+```
+
+- In this case ```sizes=""``` is not needed, the browser knows what resolution the display is and serves the most appropiate image in the ```srcset=""``` attribute.
+
+- Art direction:   
