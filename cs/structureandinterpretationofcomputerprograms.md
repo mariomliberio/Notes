@@ -267,4 +267,4 @@ circumference
 
 **Applicative order vs normal order**
 
-- 
+- BLABLABLA
