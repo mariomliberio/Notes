@@ -303,6 +303,18 @@ then reduce to
 
 ---
 
+[//]: # "Accidentally skipped 1.1.6 Conditional expressions and predicates, insert here"
+
+**Conditional Expressions & Predicates**
+
+* The expressive power of the type of procedures we can define at the moment is very limited. This is because we have no way to make tests and to preform a different operation depending on the result of the test. For example we cannot define a procedure that computes the absolute value of a number by testing wether the number is positive, negative or 0 and taking different actions depending on this. See Figure 2:
+
+![Figure 1.2](images/strcpfigure1-2.gif).
+
+*
+
+---
+
 **Example: Square root by Newton's Method**
 
 * Procedures, as shown above, are much like ordinary mathematical functions. The specify a value that is determined by one or more parameters. But there is a crucial difference between mathematical functions and computer procedures. Procedures must be effective.
