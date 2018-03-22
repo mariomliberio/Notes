@@ -870,3 +870,61 @@ ble>
 - An alternative to using ```scope=""``` is to use ```id=""``` and ```headers=""```. They are used like so:
   1. You add a unique ```id=""``` to each ```<th>``` element.
   2. You add a ```headers=""``` attribute to each ```<td>``` element. Each ```headers``` attribute has to conatin a list of the ```id=""``` of all the ```<th>``` elements that act as a header for that cell.
+
+***
+
+**HTML FORMS**
+
+- HTML forms are one of the main forms of interaction with your users. HTML forms are made of one or more widgets, such as textboxes, inputareas, buttons, checkboxes and others.
+
+- In the following chapter we will go over the basic tags to create a basic contact us form. We will use the following elements: ```<form>, <label>, <input>, <textarea> & <button>```
+
+**The ```<form>``` element**
+
+-  All HTML forms start with an opening and closing ```<form>``` element. Let's look at a basic ```<form>``` element with the ```action=""``` & ```method=""``` attributes. It is a container element like a ```<div>``` or a ```<p>``` element except it supports specific attributes:
+
+```
+<form action="/my-handling-form-page" method="post">
+</form>
+```
+
+- Let's look at our two attributes:
+  - ```action``` defines the location url where the form collects the data that is input.
+  - ```method``` defines which HTTP method we will use to send data with (either get or post).
+
+**The ```<label>, <input> & <textarea>``` elements.**
+
+- Each field in our form contains a ```<label>``` element, In this element we use a ```for=""``` attribute to label the corresponding widget. It refers to the corresponding id which is located in our next element.
+
+- It also contains an ```<input>``` or ```<textarea>``` element. Here, we have a very important attribute the ```type=""``` element. This attribute changes radically how our form input will look, therefore we need to use the correct type for the right case. 
+
+- Let's look at an example:
+
+```
+<form action="/my-handling-form-page" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name">
+    </div>
+    <div>
+        <label for="mail">E-mail:</label>
+        <input type="email" id="mail" name="user_mail">
+    </div>
+    <div>
+        <label for="msg">Message:</label>
+        <textarea id="msg" name="user_message"></textarea>
+    </div>
+</form>
+```
+
+- As you can see our ```for=""``` attribute always references our ```id=""``` attribute in our input. 
+
+- In our first input we use the ```text``` value for our ```type``` attribute. This represents a simple single line with a text input.
+
+- For our second input we use the ```mail``` value for our ```type``` attribute. This only accepts a well formed email address. And so on and so forth.
+
+- Finally its important to underline the difference between ```<input>``` & ```<textarea>```. The ```<input>``` tag is an empty element therefore it doesnt need a closing tag. The ```<textarea>``` tag is not an empty element so you do have to close it with a proper tag. This has a clear difference when dealing with default values. With our ```<input>``` tag we need to give it a ```value=""``` attribute with the content that we want displayed greyed out in the background. On the other hand with our ```<textarea>``` tags we just need to put this default value between our opening and closing ```<textarea>``` tags.
+
+**The ```<button>``` element**
+
+- To submit our form  
