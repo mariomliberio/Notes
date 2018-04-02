@@ -1004,3 +1004,53 @@ ble>
 - Labels are clickable too. This is useful for examples like text inputs where you can click the label as well as the input to focus it,  for example radio buttons and checkboxes. 
 
 - Multiple labels can be used on a single widget. However this is not the best idea if we are looking for accesibility in our website. 
+
+***
+
+**Common structures used with forms**
+
+- Its good to remember that forms are just HTML. Its common to wrap a label and its widget with a ```<div>``` element. ```<p>``` elements are also commonly used as are lists.(for example for checkboxes or radio buttons).
+
+- In addtion to the ```<fieldset>``` element its also common practice to use HTML headings and sectioning (```<section>```) to structure a complex form.
+
+- Above all the most important is for you to find a comfortable style to structure your forms, while making them accesible and usable for all.
+
+***
+
+**The native form widgets**
+
+**Common Attributes**
+
+- ```autofocus``` : Lets you specify that the element should automatically have input focus when the page loads. Only one form element can have this attribute specified.
+
+- ```disabled``` : indicates that the user cannot interact with this element.
+
+- ```form``` : The form element that the widget is associated with. 
+
+- ```name``` : the name of the element, submitted with the form data for your key/value pairs (server side interpretation).
+
+- ```value``` : The elements initial value.
+
+***
+
+**Text input fields**
+
+- All text fields share some common behaviours: 
+  - They can be marked as ```readonly``` (user cannot modify the value) or even ```disabled``` (content is never sent with the rest of the form data).
+  - They can have a ```placeholder```, this is text that appears inside the text input box that describes the purpose of the box briefly.
+  - They can be constrained in ```size``` and ```length```.
+  - They can benefit from spell checking if its supported by the browser.
+
+**Single line text fields**
+
+- Created using an input element whose ```type``` attribute value is set to ```text``` (its the defalut value). If the browser does not support the value you give to the type attribute it will fallback to ```text```.
+
+- Single line text fields have only one disadvantage, if you type text with line breaks the browser removes them before sending the data.
+
+- ```type``` can have many different values, for example ```email```. This will force the user to input an email address, otherwise there will be an error on the client side, preformed by the browser. It is also possible to let the user type several email addresses by including the ```multiple``` attribute like so: ```<input type="email" id="email" name="email" multiple>``` 
+
+- It can also be set to ```password``` if the input field is supposed to be a password. This doesnt add any special constraints onto the input it just obscures the value entered into the field with dots or asterisks. This is just a user interface feature, it does not hash the password input and unless you program that it will be sent in plain text which is a clear security flaw.
+
+- Another value of the type attribute is ```search```. The main difference between this and a normal text input is the way the browser styles it.
+
+- We can also create a phone number field by 
