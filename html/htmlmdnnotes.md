@@ -927,4 +927,80 @@ ble>
 
 **The ```<button>``` element**
 
-- To submit our form  
+- To submit our form we simply need to create a ```<button>``` element just above the closing ```</form>``` tag. 
+
+- The ```<button>```element needs a ```type=""``` attribute. 
+
+- This type attribute can take 3 different arguments: Submit, Reset and Button.
+
+- The submit value will send the form data to the webpage as defined by the action attribute of the ```<form>``` element.
+
+- The reset vamie resets all of the forms widgets to its default value. From a UX point of view this is pretty useless.
+
+- The button attribute does nothing by itself. However when building custom buttons with JS it can be very useful. 
+
+- You can also use the following tags to create a custom button: ```<input type="submit">```.
+
+**Basic Form Styling**
+
+- As you can tell if youve written a basic HTML form they are pretty ugly. Therefore it is important to style it nicely. However forms are not the simplest element to style.
+
+- You can see the MDN's basic form styling example [here](https://github.com/mdn/learning-area/blob/master/html/forms/your-first-HTML-form/first-form-styled.html).
+
+**Sending form data to your web server**
+
+- Probably the trickiest part of dealing with forms is sending your form data to your web server. 
+
+- The ```<form>``` element can take two attributes for this: ```action & method```.
+
+- However this is not enough, we also need to give a na,e to our data. Those names are important on both sides, for the browser and the server. To name data we use the ```name=""``` attribute to each form element indviidaully.
+
+- Lets look at a simple example:
+
+```
+<form action="/my-handling-form-page" method="post"> 
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="user_name" />
+  <div>
+  <div>
+    <label for="mail">E-mail:</label>
+    <input type="email" id="mail" name="user_email" />
+  </div>
+  <div>
+    <label for="msg">Message:</label>
+    <textarea id="msg" name="user_message"></textarea>
+  </div>
+  ```
+
+- In the last example we will send 3 pieces of data named ```user_name, user_email & user_message``` The data will be sent to the page ```/my-handling-form-page``` using the HTTP post method.
+
+- On the server side the script at the URL ```/my-handling-form-page``` will receive the data as a list of 3 key/value items.
+
+***
+
+**How to structure an HTML form**
+
+**The <form> element**
+
+- The ```<form>``` element cannot be ensted inside another form, nesting forms can cause unpredictable problems in your webpage.
+
+**The ```<fieldset>``` & ```<legend>``` elements**
+
+- The ```<fieldset>``` element is a way to group widgets that share the same purpose for styling and semantic purposes.  You can label a ```<fieldset>``` by including a ```<legend>``` element just below the opening ```<fieldset>``` tag. Its content describes the purpose of the ```<fieldset>```.
+
+- Fieldset is very useful for assistive technology. It helps building accesible forms by letting screenreaders interpret it.
+
+**
+
+**The <label> element**
+
+-  The ```<label>``` element is the formal way to define a label for an HTML form widget. This is the most important element if you want to build accesible forms.
+
+- Lets look at a simple example: ```<label for="name">Name:</label> <input type="text" id="name" name="user_name">``` 
+
+- With the label correctly asscoiated with the input via the ```for=""``` & ```id=""``` attributes.
+
+- Labels are clickable too. This is useful for examples like text inputs where you can click the label as well as the input to focus it,  for example radio buttons and checkboxes. 
+
+- Multiple labels can be used on a single widget. However this is not the best idea if we are looking for accesibility in our website. 
