@@ -1053,4 +1053,35 @@ ble>
 
 - Another value of the type attribute is ```search```. The main difference between this and a normal text input is the way the browser styles it.
 
-- We can also create a phone number field by 
+- We can also create a phone number field by giving the type ```tel``` to our ```type=""``` attribute. However due to the numerous types of phone numbers present around the world, this does not force any constraints on the value submitted, therefore it can also be a number with letters (think american commercial phone numbers). However on some devices this might enable the appearance of a numerical keypad on-screen to facilitate input by the user.
+
+- Our final type of single line text fields will be the ```url** type. This add constraints to the input where the browser will reject it if a non valid url is submitted.
+
+**Multi-line text fields**
+
+- A multi-line text field is submitted using the ```<textarea>``` tags rather than the ```<input>``` tags. The ```<textarea>``` element needs a ```col=""``` (columns) & ```rows=""``` attribute. The main difference between an input and a textarea element is that line breaks are accepted and retained when sent to the server in textarea elements. The other main difference is the visual one created by te col & rows attributes.
+
+- ```<textarea>``` also accepts other attributes such as ```wrap=""``` which indicates how the text is wrapped. The two values that can be given to it are ```hard``` & ```soft```. 
+
+- If you want to define a default value for an ```<input>``` tag you need to define a value attribute. On the other hand when using ```<textarea>``` you can put the default text between the opening and ```</textarea>```
+
+***
+
+**Drop-down content**
+
+- Drop-down content is a simple way of saving UI space for more interesting design. HTML includes two ways of using dropdown content in forms:  the **select box** & the **autocomplete forms**. In both cases the operation is the same. Once the control is activated, the browser displays a list of values 
+
+**Select Box**
+
+- A select box is created by a ```<select>``` element with one or more ```<option>``` values nested inside. For example:
+
+```
+
+<select id="simple" name="simple">
+  <option>Banana</option>
+  <option>Cherry</option>
+  <option>Lemon</option>
+</select>
+
+```
+
