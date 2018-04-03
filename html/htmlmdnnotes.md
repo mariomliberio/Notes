@@ -1084,3 +1084,34 @@ ble>
 
 ```
 
+- If required the default value of the select box can be assigned by giving the ```selected``` attribute on the desired ```<option>``` element.
+
+- Option elements can also be nested inside an ```<optgroup>``` element to create visually associated groups of options.
+
+- The previous example with the implementation of the ```<optgroup>``` tags and the ```selected``` attribute would look like so:
+
+```
+
+<select id="groups" name="groups">
+  <optgroup label="fruits">
+    <option>Banana</option>
+    <option selected>Cherry</option>
+    <option>Lemon</option>
+  </optgroup>
+</select>
+
+```
+
+- If a ```value=""``` attribute is set to the ```<option>``` element, that attribute's value is sent to the server when the form is submitted. Otherwise if its ommited, the content of the ```<option>``` element will be sent to the server.
+
+- If a ```label=""``` attribute is set on the ```<optgroup>``` element, the label is displayed above the values even though it is not selectable.
+
+***
+
+**Multiple choice select box**
+
+- By default, a select box will only allow you to select one value. By adding the ```multiple``` attribute to the ```<select>``` tag we allow users to select multiple values (By holding <kbd>Ctrl</kbd> or <kbd>Cmd</kbd>). When using the ```multiple** attribute the content will no longer be displayed as a dropdown, instead it will appear as a list.
+
+**Autocomplete box**
+
+- 
