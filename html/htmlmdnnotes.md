@@ -1,5 +1,4 @@
 # Working with HTML &#129303;
-***
 **Notes from the start**
 ###### cos why not. 
 
@@ -981,7 +980,7 @@ ble>
 
 **How to structure an HTML form**
 
-**The <form> element**
+**The ```<form>``` element**
 
 - The ```<form>``` element cannot be ensted inside another form, nesting forms can cause unpredictable problems in your webpage.
 
@@ -991,9 +990,9 @@ ble>
 
 - Fieldset is very useful for assistive technology. It helps building accesible forms by letting screenreaders interpret it.
 
-**
+***
 
-**The <label> element**
+**The ```<label>``` element**
 
 -  The ```<label>``` element is the formal way to define a label for an HTML form widget. This is the most important element if you want to build accesible forms.
 
