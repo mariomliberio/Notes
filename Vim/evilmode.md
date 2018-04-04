@@ -31,4 +31,4 @@
 - Press / followed by a word/phrase and enter to search this in your buffer. After you can keep searching the same word forward by using n and backwards with N. 
 - If you want to search for a word/phrase in the backwards direction use ?.
 - To find an ending/opening ({[]}) press % while on the starting closing one. You can also press it again to go to the back to the original ({[]}).
-- 
+- We can use :s to substitute, on the correct line, usage for 1 word goes like so :s/wordreplaced/newword. This can be extended in several ways: We can add /g at the end to replace that word everytime on that line. 
