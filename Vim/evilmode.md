@@ -28,4 +28,7 @@
 - Press G to go to the bottom of a buffer (document).
 - Press gg to go to the beggining of a buffer.
 - Press :followedbyanumber to go to a specific line. Eg. to go to this line we would press :30.
-- Press / followed by a word and enter to search this in your buffer. After you can keep searching the same word forward by using n and backwards with N. 
+- Press / followed by a word/phrase and enter to search this in your buffer. After you can keep searching the same word forward by using n and backwards with N. 
+- If you want to search for a word/phrase in the backwards direction use ?.
+- To find an ending/opening ({[]}) press % while on the starting closing one. You can also press it again to go to the back to the original ({[]}).
+- 
