@@ -1088,7 +1088,7 @@ ble>
 
 - Option elements can also be nested inside an ```<optgroup>``` element to create visually associated groups of options.
 
-- The previous example with the implementation of the ```<optgroup>``` tags and the ```selected``` attribute would look like so:
+- The previous example with the implementation of the ```<optgroup>``` tags and the ```selected``` attribute would look like so.
 
 ```
 
@@ -1110,8 +1110,96 @@ ble>
 
 **Multiple choice select box**
 
-- By default, a select box will only allow you to select one value. By adding the ```multiple``` attribute to the ```<select>``` tag we allow users to select multiple values (By holding <kbd>Ctrl</kbd> or <kbd>Cmd</kbd>). When using the ```multiple** attribute the content will no longer be displayed as a dropdown, instead it will appear as a list.
+- By default, a select box will only allow you to select one value. By adding the ```multiple``` attribute to the ```<select>``` tag we allow users to select multiple values (By holding <kbd>Ctrl</kbd> or <kbd>Cmd</kbd>). When using the ```multiple``` attribute the content will no longer be displayed as a dropdown, instead it will appear as a list.
 
 **Autocomplete box**
+
+- You can provide suggested autocompleted values for your form box by using the ```<datalist>``` element with some child ```<option>``` elements to specify the values to display. The datalist is bound to an element (usually an ```<input>```) using the ```list``` attribute. Once our datalist is linked with the form (input) widget, its options are used as auto-complete text on the users typing. Usually this is presented as a dropdown with the possible autocomplete options according to what the user is typing. An example looks like so:
+
+```
+
+<label for="myFruit">What's your favorite fruit?</label>
+<input type="text" name="myFruit" id="myFruit" list="mySuggestion">
+<datalist id="mySuggestion">
+  <option>Apple</option>
+  <option>Banana</option>
+  <option>Blackberry</option>
+  <option>Blueberry</option>
+  <option>Lemon</option>
+  <option>Lychee</option>
+  <option>Peach</option>
+  <option>Pear</option>
+</datalist>
+
+```
+
+- The ```<datalist>``` element is a very recent addition to HTML forms therefore browser support is not spread across all browsers. For example atm safari and ie10 do not support this (lol plebs). To handle this we can do a fallback trick to support it:
+
+```
+
+<label for="myFruit">What is your favorite fruit? (With fallback)</label>
+<input type="text" id="myFruit" name="fruit" list="fruitList">
+    
+ <datalist id="fruitList">
+  <label for="suggestion">or pick a fruit</label>
+  <select id="suggestion" name="altFruit">
+    <option>Apple</option>
+    <option>Banana</option>
+    <option>Blackberry</option>
+    <option>Blueberry</option>
+    <option>Lemon</option>
+    <option>Lychee</option>
+    <option>Peach</option>
+    <option>Pear</option>
+  </select>
+ </datalist>
+
+```
+
+- Browsers that support ```<datalist>``` will ignore the elements inside which are not ```<option>``` while browsers without ```<datalist>``` support, will only take into account the ```<label>``` & ```<select>``` elements that are previously ignored.
+
+***
+
+**Checkable Items**
+
+- There are two types of checkable items in form widgets, checkbox buttons and radio buttons. Both use the ```checked``` attribute to verify whether that item is checked by default.
+
+- These widgets do not act like traditional form widgets, for most form widgets, once the form is submitted all with a ```name``` attribute will be sent to the server even if their content is empty. However with checked items, they will only be sent to the server if they are used/checked. If they arent, nothing will be sent, not even their name.
+
+- For maximum accesibility it is recommended to surround each list of related items in ```<fieldset>``` tags with a ```<legend>``` tag providing an overall description of the list. Each individual pair of ```<label>``` / ```<input>``` elements should be contained in its own list item. It is also important to give them a ```value** attribute to specify their meaning.
+
+**CheckBox**
+
+- A checkbox is created by creating an ```<input>``` element with the ```type="checkbox"``` attribute. Here is an example of a checkbox which is checked by default: ```<input type="checkbox" checked id="carrots" name="carrots" value="carrots">```.
+
+**Radio**
+
+- A radio button is created in the same way except this time ```type="radio"``` like so: ```<input type="radio" checked id="soup" name="meal">```. Several radio buttons can be grouped together if they share the same ```name``` attribute. Only one button in a given group may be checked at the same time. When the form is sent only the value that is checked will be sent. Here is an extended example of a ```<fieldset>``` of radio buttons:
+
+```
+
+<fieldset>
+  <legend>What is your favorite meal?</legend>
+  <ul>
+    <li>
+      <label for="soup">Soup</label>
+      <input type="radio" checked id="soup" name="meal" value="soup">
+    </li>
+    <li>
+      <label for="curry">Curry</label>
+      <input type="radio" id="curry" name="meal" value="curry">
+    </li>
+    <li>
+      <label for="pizza">Pizza</label>
+      <input type="radio" id="pizza" name="meal" value="pizza">
+    </li>
+  </ul>
+</fieldset>
+
+```
+
+***
+
+**Buttons**
 
 - 
