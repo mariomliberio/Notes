@@ -31,4 +31,11 @@
 - Press / followed by a word/phrase and enter to search this in your buffer. After you can keep searching the same word forward by using n and backwards with N. 
 - If you want to search for a word/phrase in the backwards direction use ?.
 - To find an ending/opening ({[]}) press % while on the starting closing one. You can also press it again to go to the back to the original ({[]}).
-- We can use :s to substitute, on the correct line, usage for 1 word goes like so :s/wordreplaced/newword. This can be extended in several ways: We can add /g at the end to replace that word everytime on that line. 
+- We can use :s to substitute, on the correct line, usage for 1 word goes like so :s/wordreplaced/newword. This can be extended in several ways: We can add /g at the end to replace that word everytime on that line. We can also substitute phrases between two lines like so when # represents line number: :#,#s/old/new/g . We can also replace a word in every instance in a document by typing :%s/old/new/g and we can add a confirmation option by adding a c at the end: :%s/old/new/gc.
+
+**Lesson 5**
+
+- We can execute an external command by typing :! followed by our shell command. Any shell command can be executed this way.
+- To save changes made to a file we type :w. If this is a new document we type :w filename.ext
+- To save a part of a file we type :#,# w filename.ext when # represents starting and ending line numbers.
+- 
