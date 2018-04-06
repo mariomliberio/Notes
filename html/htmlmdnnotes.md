@@ -1202,4 +1202,42 @@ ble>
 
 **Buttons**
 
-- 
+- Within HTML forms there are 3 types of buttons: 1. Submit: Sends the form data to the server. 2. Reset: Resets all form widgets to their default value. 3. Anonymous: Buttons that have no automatic effect, however can be customized by using JS. If you ommit the ```type``` attribute, this is the default type of button.
+
+- A button can be created by either using ```<button>``` tags or ```<input>``` tags. It is the ```type``` attribute that defines what kind of button is displayed.
+
+- Buttons always behave the same regardless of using a ```<button>``` or ```<input>``` tag, however this does not mean that differences dont exist. ```<button>``` elements allow you to use HTML content in their label, inserted between its opening and closing tags. ```<input>``` elements on the other hand are empty elements, their labels are determined in the ```value``` attribute, therfore they only accept plain text, not HTML elements.```<button>``` elements it is possible to have a value different than their label.
+
+***
+
+**Advanced Form Widgets**
+
+- In this section we will look at Form elements which contain unusual data such as exact or approx. numbers, dates and times or colors.
+
+**Numbers**
+
+- Elements for numbers are created by using ```<input>``` elements with a ```type="number"``` attribute. This creates a text field but only allows numbers and usually provides buttons to increase or decrease their value. With the number type of button we can also constrain the value between a maximum and minimum with ```max=""``` and ```min=""``` & we can also set the value by which increase or decrease buttons will affect it using the ```step=""``` attribute. An example looks like so ```<input type="number" name="age" id="age" min="1" max="10" step="2">```. This example creates a number widget where age is minimum 1 and max 10 and where the step of increase or decrease by the buttons is equal to 2.
+
+**Sliders**
+
+- Another way to pick a number is to use a slider. These are usually less accurate than textfields therefore they are preferred to determine a value that doesn't require accuracy. These are also used with ```<input>``` tags, in this case we set a ```type="range"```. Again it is recommeneded to use ```max=""```, ```min=""``` & ```step=""```. Let's look at another example ```<input type="range" name="beans" id="beans" min="0" max="500" step="10">```. The problem with sliders is that they dont offer any visual feedback of what the value is. However this can be done with some simple JS. Let's modify the previous example and add a bit of JS for clarity, in this case we will use a ```<span>``` element in which JS will output the current value:
+
+```
+
+// HTML
+<label for="beans">How many beans can you eat?</label>
+<input type="range" name="beans" id="beans" min="0" max="500" step="10">
+<span class="beancount"></span>
+
+// JS
+
+var beans = document.querySelector('#beans');
+var count = document.querySelector('.beancount');
+
+count.textContent = beans.value;
+
+beans.oninput = function() {
+  count.textContent = beans.value;
+}
+
+```
